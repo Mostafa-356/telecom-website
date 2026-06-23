@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 
 export default function Error({
@@ -84,11 +85,21 @@ export default function Error({
           >
             Try Again
           </Button>
-          <a href="/">
-            <Button variant="outline" className="px-8 py-3 text-lg w-full">
-              Back Home
+          <Link href="/">
+            <Button variant="outline" className="px-8 py-3 text-lg">
+              Home
             </Button>
-          </a>
+          </Link>
+          <Link href="/dashboard">
+            <Button variant="outline" className="px-8 py-3 text-lg">
+              Dashboard
+            </Button>
+          </Link>
+          <Link href="/auth/signin">
+            <Button variant="outline" className="px-8 py-3 text-lg">
+              Sign In
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

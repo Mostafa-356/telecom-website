@@ -1,6 +1,4 @@
 import type { Metadata, Viewport } from 'next'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 // Viewport configuration (Next.js 14+)
@@ -98,22 +96,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Font Configuration */}
-        <style>{`
-html {
-  font-family: ${GeistSans.style.fontFamily};
-  --font-sans: ${GeistSans.variable};
-  --font-mono: ${GeistMono.variable};
-}
-        `}</style>
-        
-        {/* Favicon & Icons */}
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-icon.png" />
-        
-        {/* Web App Manifest */}
-        <link rel="manifest" href="/manifest.json" />
-        
         {/* Mobile & Theme */}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />

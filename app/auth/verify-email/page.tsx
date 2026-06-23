@@ -11,12 +11,16 @@ export default function VerifyEmailPage() {
   const router = useRouter()
   const [isResending, setIsResending] = useState(false)
   const [email, setEmail] = useState<string>('')
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    // Get email from session storage if available
-    const storedEmail = typeof window !== 'undefined' ? sessionStorage.getItem('signupEmail') : null
-    if (storedEmail) {
-      setEmail(storedEmail)
+    setMounted(true)
+    // Get email from session storage if available (only on client)
+    if (typeof window !== 'undefined') {
+      const storedEmail = sessionStorage.getItem('signupEmail')
+      if (storedEmail) {
+        setEmail(storedEmail)
+      }
     }
   }, [])
 

@@ -1,88 +1,90 @@
-/**
- * Authentication Utilities
- * Helper functions for user authentication
- */
-
-import { supabase } from './supabase'
+import { createClient } from './supabase'
 
 /**
- * Sign up new user with email and password
+ * Sign up a new user
  */
-export async function signUp(email: string, password: string, fullName: string) {
+export async function signUp(email: string, password: string, metadata?: Record<string, any>) {
+  const supabase = createClient()
+  
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
     options: {
-      data: {
-        full_name: fullName,
-      },
+      data: metadata,
+      emailRedirectTo: `${window.location.origin}/auth/verify-email`,
     },
   })
 
-  if (error) throw error
-  return data
+  return { data, error }
 }
 
 /**
- * Sign in user with email and password
+ * Sign in with email and password
  */
 export async function signIn(email: string, password: string) {
+  const supabase = createClient()
+  
   const { data, error } = await supabase.auth.signInWithPassword({
     email,
     password,
   })
 
-  if (error) throw error
-  return data
+  return { data, error }
 }
 
 /**
- * Sign out current user
+ * Sign out the current user
  */
 export async function signOut() {
+  const supabase = createClient()
   const { error } = await supabase.auth.signOut()
-  if (error) throw error
+  return { error }
 }
 
 /**
- * Get current user session
+ * Send password reset email
  */
-export async function getCurrentUser() {
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+export async function resetPassword(email: string) {
+  const supabase = createClient()
+  
+  const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${window.location.origin}/auth/reset-password`,
+  })
+
+  return { data, error }
+}
+
+/**
+ * Update user password
+ */
+export async function updatePassword(newPassword: string) {
+  const supabase = createClient()
+  
+  const { data, error } = await supabase.auth.updateUser({
+    password: newPassword,
+  })
+
+  return { data, error }
+}
+
+/**
+ * Get current user
+ */
+export async function getUser() {
+  const supabase = createClient()
+  const { data: { user } } = await supabase.auth.getUser()
   return user
 }
 
 /**
- * Get current session
+ * Update user metadata
  */
-export async function getSession() {
-  const {
-    data: { session },
-  } = await supabase.auth.getSession()
-  return session
-}
-
-/**
- * Update user profile
- */
-export async function updateProfile(fullName: string, phone?: string) {
+export async function updateUserMetadata(metadata: Record<string, any>) {
+  const supabase = createClient()
+  
   const { data, error } = await supabase.auth.updateUser({
-    data: {
-      full_name: fullName,
-      phone,
-    },
+    data: metadata,
   })
 
-  if (error) throw error
-  return data
-}
-
-/**
- * Reset password
- */
-export async function resetPassword(email: string) {
-  const { error } = await supabase.auth.resetPasswordForEmail(email)
-  if (error) throw error
+  return { data, error }
 }

@@ -36,75 +36,75 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/#plans" className="hover:text-white transition-colors">
                   Mobile Plans
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Home Broadband
+                <Link href="/#services" className="hover:text-white transition-colors">
+                  Broadband Services
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Business Solutions
+                <Link href="/#features" className="hover:text-white transition-colors">
+                  Features & Solutions
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  International Roaming
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Support</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Help Center
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Network Status
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Store Locator
+                <Link href="/dashboard/devices" className="hover:text-white transition-colors">
+                  Manage Devices
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
+            <h4 className="font-semibold mb-4">Account</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  About Us
+                <Link href="/dashboard" className="hover:text-white transition-colors">
+                  Dashboard
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Careers
+                <Link href="/dashboard/usage" className="hover:text-white transition-colors">
+                  Usage & Stats
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Press
+                <Link href="/dashboard/billing" className="hover:text-white transition-colors">
+                  Billing
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Investors
+                <Link href="/dashboard/subscription" className="hover:text-white transition-colors">
+                  Subscriptions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Resources</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li>
+                <Link href="/#testimonials" className="hover:text-white transition-colors">
+                  Testimonials
+                </Link>
+              </li>
+              <li>
+                <Link href="/auth/signin" className="hover:text-white transition-colors">
+                  Sign In
+                </Link>
+              </li>
+              <li>
+                <Link href="/auth/signup" className="hover:text-white transition-colors">
+                  Get Started
+                </Link>
+              </li>
+              <li>
+                <Link href="/dashboard/settings" className="hover:text-white transition-colors">
+                  Settings
                 </Link>
               </li>
             </ul>
@@ -114,28 +114,31 @@ export function Footer() {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex space-x-6 mb-4 md:mb-0">
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Facebook className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Twitter className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Instagram className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Youtube className="w-5 h-5" />
-              </Link>
+              </a>
             </div>
             <div className="flex space-x-6 text-sm text-gray-400">
-              <Link href="#" className="hover:text-white transition-colors">
+              <Link href="/" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="#" className="hover:text-white transition-colors">
+              <Link href="/" className="hover:text-white transition-colors">
                 Terms of Service
               </Link>
-              <Link href="#" className="hover:text-white transition-colors">
+              <Link href="/" className="hover:text-white transition-colors">
                 Accessibility
+              </Link>
+              <Link href="/" className="hover:text-white transition-colors">
+                Contact
               </Link>
             </div>
           </div>

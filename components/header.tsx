@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Menu, Phone, Search, User } from "lucide-react"
+import { Menu, Phone, User } from "lucide-react"
 import Link from "next/link"
 
 export function Header() {
@@ -29,26 +29,26 @@ export function Header() {
               <Link href="/#testimonials" className="text-gray-700 hover:text-purple-600 transition-colors">
                 Testimonials
               </Link>
+              <Link href="/dashboard/usage" className="text-gray-700 hover:text-purple-600 transition-colors">
+                Usage
+              </Link>
             </nav>
           </div>
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon" className="hidden md:flex">
-              <Search className="w-5 h-5" />
-            </Button>
             <Link href="/auth/signin">
-              <Button variant="ghost" className="flex items-center gap-2">
+              <Button variant="ghost" className="hidden sm:flex items-center gap-2">
                 <User className="w-5 h-5" />
                 <span className="hidden sm:inline">Sign In</span>
               </Button>
             </Link>
-            <Link href="/dashboard">
+            <Link href="/auth/signup">
               <Button className="hidden md:flex bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
-                Dashboard
+                Sign Up
               </Button>
             </Link>
-            <Link href="/auth/signup" className="md:hidden">
-              <Button size="icon">
-                Get Started
+            <Link href="/dashboard">
+              <Button className="hidden lg:flex bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
+                Dashboard
               </Button>
             </Link>
             <Button variant="ghost" size="icon" className="md:hidden">

@@ -51,13 +51,18 @@ export default function NotFound() {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
           <Link href="/">
-            <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 px-8 py-3 text-lg">
+            <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 px-8 py-3 text-lg w-full">
               ← Back Home
             </Button>
           </Link>
           <Link href="/dashboard">
-            <Button variant="outline" className="px-8 py-3 text-lg">
-              Go to Dashboard
+            <Button variant="outline" className="px-8 py-3 text-lg w-full">
+              Dashboard
+            </Button>
+          </Link>
+          <Link href="/auth/signin">
+            <Button variant="outline" className="px-8 py-3 text-lg w-full">
+              Sign In
             </Button>
           </Link>
         </div>
