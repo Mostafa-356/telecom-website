@@ -85,15 +85,22 @@ export function useAuth() {
     setLoading(true)
     setError(null)
     try {
-      const { error } = await supabase.auth.signUp({
+      const { data, error } = await supabase.auth.signUp({
         email,
         password,
         options: {
           data: { full_name: fullName },
+          emailRedirectTo: `${typeof window !== 'undefined' ? window.location.origin : ''}/auth/callback`,
         },
       })
       if (error) throw error
-      router.push('/verify-email')
+      
+      // Store email for verify page
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem('signupEmail', email)
+      }
+      
+      router.push('/auth/verify-email')
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Sign up failed')
     } finally {
@@ -107,10 +114,13 @@ export function useAuth() {
     try {
       const { error } = await supabase.auth.signInWithPassword({ email, password })
       if (error) throw error
-      router.push('/dashboard')
+      
+      // Add a small delay to ensure auth state is updated
+      setTimeout(() => {
+        router.push('/dashboard')
+      }, 500)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Sign in failed')
-    } finally {
       setLoading(false)
     }
   }, [router])
