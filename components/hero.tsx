@@ -63,6 +63,7 @@ export function Hero() {
               alt="5G Network Visualization"
               width={500}
               height={600}
+              priority
               className="relative z-10 rounded-2xl shadow-2xl"
             />
           </div>
