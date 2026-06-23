@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play, Zap } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export function Hero() {
   return (
@@ -29,13 +30,15 @@ export function Hero() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg"
-              >
-                View Plans
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+              <Link href="/dashboard">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg"
+                >
+                  View Plans
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
               <Button size="lg" variant="outline" className="px-8 py-4 text-lg border-2 bg-transparent">
                 <Play className="w-5 h-5 mr-2" />
                 Watch Demo
