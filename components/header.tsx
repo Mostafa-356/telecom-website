@@ -17,17 +17,17 @@ export function Header() {
               </span>
             </Link>
             <nav className="hidden md:flex items-center space-x-6">
-              <Link href="#" className="text-gray-700 hover:text-purple-600 transition-colors">
-                Mobile
+              <Link href="/#plans" className="text-gray-700 hover:text-purple-600 transition-colors">
+                Plans
               </Link>
-              <Link href="#" className="text-gray-700 hover:text-purple-600 transition-colors">
-                Broadband
+              <Link href="/#features" className="text-gray-700 hover:text-purple-600 transition-colors">
+                Features
               </Link>
-              <Link href="#" className="text-gray-700 hover:text-purple-600 transition-colors">
-                Business
+              <Link href="/#services" className="text-gray-700 hover:text-purple-600 transition-colors">
+                Services
               </Link>
-              <Link href="#" className="text-gray-700 hover:text-purple-600 transition-colors">
-                Support
+              <Link href="/#testimonials" className="text-gray-700 hover:text-purple-600 transition-colors">
+                Testimonials
               </Link>
             </nav>
           </div>
@@ -35,12 +35,22 @@ export function Header() {
             <Button variant="ghost" size="icon" className="hidden md:flex">
               <Search className="w-5 h-5" />
             </Button>
-            <Button variant="ghost" size="icon">
-              <User className="w-5 h-5" />
-            </Button>
-            <Button className="hidden md:flex bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
-              Get Started
-            </Button>
+            <Link href="/auth/signin">
+              <Button variant="ghost" className="flex items-center gap-2">
+                <User className="w-5 h-5" />
+                <span className="hidden sm:inline">Sign In</span>
+              </Button>
+            </Link>
+            <Link href="/dashboard">
+              <Button className="hidden md:flex bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
+                Dashboard
+              </Button>
+            </Link>
+            <Link href="/auth/signup" className="md:hidden">
+              <Button size="icon">
+                Get Started
+              </Button>
+            </Link>
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="w-5 h-5" />
             </Button>

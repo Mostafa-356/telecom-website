@@ -10,9 +10,10 @@
   command = "pnpm dev"
   port = 3000
 
+# Static assets - serve with correct headers
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/sw.js"
+  to = "/sw.js"
   status = 200
 
 [[redirects]]
@@ -33,6 +34,12 @@
 [[redirects]]
   from = "/manifest.json"
   to = "/manifest.json"
+  status = 200
+
+# Catch-all for client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
   status = 200
 
 [functions]
