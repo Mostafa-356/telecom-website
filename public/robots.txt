@@ -1,0 +1,30 @@
+# Telecom Website - SEO Configuration
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Disallow crawling of private directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.next/
+Disallow: /node_modules/
+
+# Sitemap location (add when ready)
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Crawl delay for all bots (in seconds)
+Crawl-delay: 1
+
+# Request rate limit (pages per 10 seconds)
+Request-rate: 10/10s
