@@ -5,9 +5,18 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   
-  // Images
+  // Images - Optimized for LCP
   images: {
-    unoptimized: true,
+    unoptimized: false, // Enable optimization for better LCP
+    formats: ['image/avif', 'image/webp'], // Modern formats
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+    // Cache settings for better performance
+    minimumCacheTTL: 60,
   },
   
   // Linting & Type Checking
@@ -21,6 +30,8 @@ const nextConfig: NextConfig = {
   // Experimental Optimizations
   experimental: {
     optimizePackageImports: ['@radix-ui'],
+    // Optimize CSS for faster rendering
+    optimizeCss: true,
   },
 }
 
