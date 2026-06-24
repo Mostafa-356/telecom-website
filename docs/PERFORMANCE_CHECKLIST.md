@@ -92,7 +92,7 @@ export function JsonLd() {
         __html: JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Organization',
-          name: 'NexTel',
+          name: 'TelecomHub',
           url: 'https://yourdomain.com',
           logo: 'https://yourdomain.com/logo.svg',
           sameAs: [

@@ -26,7 +26,7 @@ export function Hero() {
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
                 Experience lightning-fast 5G speeds, unlimited data, and crystal-clear calls. Join millions who trust
-                NexTel for their connectivity needs.
+                our premium telecom services for their connectivity needs.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">

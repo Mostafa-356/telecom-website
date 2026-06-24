@@ -10,8 +10,7 @@ export function CTA() {
             Ready to Experience the Future of Connectivity?
           </h2>
           <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-            Join millions of customers who trust NexTel for lightning-fast speeds, reliable coverage, and exceptional
-            service.
+            Join millions of customers who trust our premium telecom services for lightning-fast speeds, reliable coverage, and exceptional service.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
@@ -24,7 +23,7 @@ export function CTA() {
               className="border-white text-white hover:bg-white hover:text-purple-600 px-8 py-4 text-lg font-semibold bg-transparent"
             >
               <Phone className="w-5 h-5 mr-2" />
-              Call Sales: 1-800-NEXTEL
+              Call Sales: 1-800-TELECOM
             </Button>
           </div>
           <p className="text-purple-200 text-sm mt-6">No contracts • 30-day money-back guarantee • Free activation</p>

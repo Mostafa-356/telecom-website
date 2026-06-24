@@ -14,7 +14,7 @@ export function Footer() {
                 <Phone className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                NexTel
+                TelecomHub
               </span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
@@ -143,7 +143,7 @@ export function Footer() {
             </div>
           </div>
           <div className="text-center text-gray-400 text-sm mt-4">
-            © {new Date().getFullYear()} NexTel. All rights reserved.
+            © {new Date().getFullYear()} TelecomHub. All rights reserved.
           </div>
         </div>
       </div>

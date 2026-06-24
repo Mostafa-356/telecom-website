@@ -9,7 +9,7 @@ export function Testimonials() {
       role: "Business Owner",
       image: "/professional-woman-smiling.png",
       content:
-        "NexTel's business solutions have transformed how our team stays connected. The 5G speeds are incredible!",
+        "Our business solutions have transformed how our team stays connected. The 5G speeds are incredible!",
       rating: 5,
     },
     {
@@ -34,7 +34,7 @@ export function Testimonials() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Join millions of satisfied customers who trust NexTel for their connectivity needs
+            Join millions of satisfied customers who trust our premium telecom services for their connectivity needs
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
