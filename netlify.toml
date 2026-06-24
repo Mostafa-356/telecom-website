@@ -1,12 +1,11 @@
 [build]
-  command = "pnpm build"
+  command = "npm run build"
 
 [build.environment]
   NODE_VERSION = "20"
-  PNPM_VERSION = "8"
 
 [dev]
-  command = "pnpm dev"
+  command = "npm run dev"
   port = 3000
 
 # Static assets - serve with correct headers
@@ -33,5 +32,11 @@
 [[redirects]]
   from = "/manifest.json"
   to = "/manifest.json"
+  status = 200
+
+# Vercel redirect - prevent Vercel deployments
+[[redirects]]
+  from = "/*"
+  to = "/:splat"
   status = 200
 

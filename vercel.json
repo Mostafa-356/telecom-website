@@ -1,0 +1,8 @@
+{
+  "env": [
+    {
+      "key": "NOTE",
+      "value": "This project is deployed on Netlify, not Vercel. If you see Vercel deployments, disconnect this project from Vercel in your Vercel dashboard."
+    }
+  ]
+}

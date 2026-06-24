@@ -19,6 +19,9 @@ yarn-error.log*
 # env files
 .env*
 
+# vercel (not using Vercel, deployed on Netlify only)
+.vercel
+
 # vercel
 .vercel
 
