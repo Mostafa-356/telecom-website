@@ -6,6 +6,13 @@
   NODE_VERSION = "18"
   PNPM_VERSION = "8"
 
+# Secrets Scanning - Omit public Supabase keys from scanning
+[build.processing]
+  skip = "cache"
+
+[build.processing.environment]
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_SUPABASE_ANON_KEY,NEXT_PUBLIC_SUPABASE_URL"
+
 [dev]
   command = "pnpm dev"
   port = 3000
