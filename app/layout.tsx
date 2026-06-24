@@ -22,12 +22,12 @@ export const metadata: Metadata = {
   // Open Graph Meta Tags
   openGraph: {
     type: 'website',
-    url: 'https://yourdomain.com',
+    url: 'https://telecom-website7.netlify.app',
     title: 'Telecom Website | Premium 5G Mobile Services & Plans',
     description: 'Discover premium telecom services with ultra-fast 5G connectivity, unlimited plans, and exceptional customer support.',
     images: [
       {
-        url: 'https://yourdomain.com/og-image.jpg',
+        url: 'https://telecom-website7.netlify.app/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Telecom Website - Premium Mobile Services',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     creator: '@telecomwebsite',
     title: 'Telecom Website | Premium 5G Mobile Services',
     description: 'Ultra-fast 5G connectivity, unlimited plans, and exceptional customer support.',
-    images: ['https://yourdomain.com/twitter-image.jpg'],
+    images: ['https://telecom-website7.netlify.app/twitter-image.jpg'],
   },
   
   // Additional Meta Tags
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   
   // Canonical URL
   alternates: {
-    canonical: 'https://yourdomain.com',
+    canonical: 'https://telecom-website7.netlify.app',
   },
   
   // Icons
