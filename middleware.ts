@@ -1,6 +1,6 @@
-import { type NextRequest } from 'next/server'
+import { type NextRequest, NextResponse } from 'next/server'
 
-export async function middleware(request: NextRequest) {
+export function middleware(request: NextRequest) {
   // This middleware refreshes the auth token on every request
   // It also handles redirects for protected routes
 
@@ -21,7 +21,7 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  return
+  return NextResponse.next()
 }
 
 // Specify which routes should run middleware
