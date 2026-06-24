@@ -1,17 +1,9 @@
 [build]
   command = "pnpm build"
-  publish = ".next"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
   PNPM_VERSION = "8"
-
-# Secrets Scanning - Omit public Supabase keys from scanning
-[build.processing]
-  skip = "cache"
-
-[build.processing.environment]
-  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_SUPABASE_ANON_KEY,NEXT_PUBLIC_SUPABASE_URL"
 
 [dev]
   command = "pnpm dev"
@@ -43,11 +35,3 @@
   to = "/manifest.json"
   status = 200
 
-# Catch-all for client-side routing
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-[functions]
-  directory = ".netlify/functions"
