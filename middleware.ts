@@ -1,5 +1,4 @@
 import { type NextRequest } from 'next/server'
-import { updateSession } from '@/lib/supabase-server'
 
 export async function middleware(request: NextRequest) {
   // This middleware refreshes the auth token on every request
@@ -33,8 +32,9 @@ export const config = {
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
+     * - sw.js (service worker)
      * - public folder
      */
-    '/((?!_next/static|_next/image|favicon.ico|public).*)',
+    '/((?!_next/static|_next/image|favicon.ico|sw.js|public).*)',
   ],
 }
