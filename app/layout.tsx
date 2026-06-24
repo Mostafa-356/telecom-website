@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import './globals.css'
 import { OrganizationSchema, LocalBusinessSchema } from '@/components/schema'
 
@@ -97,6 +98,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-TSCRMXCKWJ"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TSCRMXCKWJ');`}
+        </Script>
+
         {/* Mobile & Theme */}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -105,7 +118,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#0066ff" />
         
         {/* Additional SEO */}
-        <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
+        <meta name="google-site-verification" content="y024o1qWeLHnFWUYccqw4HNIx00sDkIJJNqrcNDj-L8" />
         <link rel="sitemap" href="/sitemap.xml" />
         
         {/* JSON-LD Structured Data */}
