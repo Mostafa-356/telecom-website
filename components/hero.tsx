@@ -2,8 +2,9 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Play, Zap } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { memo } from "react"
 
-export function Hero() {
+export const Hero = memo(function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 py-20">
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -74,4 +75,4 @@ export function Hero() {
       </div>
     </section>
   )
-}
+})

@@ -1,8 +1,7 @@
 import { createClient } from './supabase'
-import { createServerSupabaseClient } from './supabase-server'
 
 /**
- * Get all available plans
+ * Get all available plans (Client-safe - public data)
  */
 export async function getPlans() {
   const supabase = createClient()
@@ -17,38 +16,14 @@ export async function getPlans() {
 }
 
 /**
- * Get user's current subscription (Server Component)
- */
-export async function getUserSubscription(userId: string) {
-  const supabase = await createServerSupabaseClient()
-  
-  const { data, error } = await supabase
-    .from('subscriptions')
-    .select('*, plans(*)')
-    .eq('user_id', userId)
-    .eq('status', 'active')
-    .single()
-
-  return { data, error }
-}
-
-/**
- * Get user's usage data (Server Component)
- */
-export async function getUserUsage(subscriptionId: string) {
-  const supabase = await createServerSupabaseClient()
-  
-  const { data, error } = await supabase
-    .from('usage')
-    .select('*')
-    .eq('subscription_id', subscriptionId)
-    .order('recorded_at', { ascending: false })
-    .limit(30)
-
-  return { data, error }
-}
-
-/**
+ * For server-only queries, use Server Components directly
+ * and import createServerSupabaseClient from './supabase-server'
+ * 
+ * Example:
+ * 'use server'
+ * import { createServerSupabaseClient } from './supabase-server'
+ * export async function getUserSubscription(userId: string) { ... }
+ *//**
  * Get user's devices (Server Component)
  */
 export async function getUserDevices(userId: string) {
@@ -157,4 +132,27 @@ export async function deleteDevice(deviceId: string) {
     .eq('id', deviceId)
 
   return { error }
+}
+
+
+/**
+ * Create a new device (Server Action - mark with 'use server' in calling file)
+ */
+export async function createDevice(userId: string, device: {
+  model: string
+  serial_number: string
+  active: boolean
+}) {
+  const supabase = createClient()
+  
+  const { data, error } = await supabase
+    .from('devices')
+    .insert([
+      {
+        user_id: userId,
+        ...device,
+      },
+    ])
+
+  return { data, error }
 }

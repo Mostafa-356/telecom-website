@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Check, Star } from "lucide-react"
+import { memo } from "react"
 
-export function Plans() {
+export const Plans = memo(function Plans() {
   const plans = [
     {
       name: "Essential",
@@ -99,4 +100,4 @@ export function Plans() {
       </div>
     </section>
   )
-}
+})

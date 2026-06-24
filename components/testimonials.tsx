@@ -1,8 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Star } from "lucide-react"
 import Image from "next/image"
+import { memo } from "react"
 
-export function Testimonials() {
+export const Testimonials = memo(function Testimonials() {
   const testimonials = [
     {
       name: "Sarah Johnson",
@@ -67,4 +68,4 @@ export function Testimonials() {
       </div>
     </section>
   )
-}
+})

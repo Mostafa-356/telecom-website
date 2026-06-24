@@ -2,26 +2,29 @@
 
 import { useEffect, useState } from 'react'
 import { useUser } from '@/lib/hooks'
-import { getUserInvoices } from '@/lib/queries'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 
 export default function BillingPage() {
   const { user } = useUser()
   const [invoices, setInvoices] = useState<any[]>([])
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     async function loadInvoices() {
       if (!user?.id) return
+      setLoading(true)
       try {
-        const data = await getUserInvoices(user.id)
-        setInvoices(data || [])
+        // TODO: Fetch invoices from server action when Supabase is configured
+        // For now, display a placeholder
+        setInvoices([])
       } finally {
         setLoading(false)
       }
     }
-    loadInvoices()
+    if (user?.id) {
+      loadInvoices()
+    }
   }, [user?.id])
 
   if (loading) {

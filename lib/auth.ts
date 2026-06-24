@@ -88,3 +88,15 @@ export async function updateUserMetadata(metadata: Record<string, any>) {
 
   return { data, error }
 }
+
+
+/**
+ * Update user profile information
+ */
+export async function updateProfile(profile: {
+  name?: string
+  avatar_url?: string
+  bio?: string
+}) {
+  return updateUserMetadata(profile)
+}

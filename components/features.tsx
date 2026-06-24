@@ -1,7 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Shield, Zap, Globe, Award } from "lucide-react"
+import { memo } from "react"
 
-export function Features() {
+export const Features = memo(function Features() {
   const features = [
     {
       icon: Zap,
@@ -53,4 +54,4 @@ export function Features() {
       </div>
     </section>
   )
-}
+})

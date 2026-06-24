@@ -1,7 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Smartphone, Wifi, Building, Headphones } from "lucide-react"
+import { memo } from "react"
 
-export function Services() {
+export const Services = memo(function Services() {
   const services = [
     {
       icon: Smartphone,
@@ -56,4 +57,4 @@ export function Services() {
       </div>
     </section>
   )
-}
+})

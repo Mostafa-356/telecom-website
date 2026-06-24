@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
+import { memo } from "react"
 
-export function Devices() {
+export const Devices = memo(function Devices() {
   const devices = [
     {
       name: "iPhone 15 Pro",
@@ -72,4 +73,4 @@ export function Devices() {
       </div>
     </section>
   )
-}
+})

@@ -173,3 +173,73 @@ export function useRealtimeSubscriptionStatus(userId: string | null) {
 
   return { subscription }
 }
+
+
+/**
+ * Hook to get user subscription data
+ */
+export function useSubscription() {
+  const [subscription, setSubscription] = useState<any>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
+  const { user } = useUser()
+
+  useEffect(() => {
+    if (!user?.id) {
+      setLoading(false)
+      return
+    }
+
+    // TODO: Fetch subscription from Supabase when configured
+    setSubscription(null)
+    setLoading(false)
+  }, [user?.id])
+
+  return { subscription, loading, error }
+}
+
+/**
+ * Hook to get usage statistics
+ */
+export function useUsageStats() {
+  const [stats, setStats] = useState<any>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
+  const { user } = useUser()
+
+  useEffect(() => {
+    if (!user?.id) {
+      setLoading(false)
+      return
+    }
+
+    // TODO: Fetch usage stats from Supabase when configured
+    setStats(null)
+    setLoading(false)
+  }, [user?.id])
+
+  return { stats, loading, error }
+}
+
+/**
+ * Hook to manage devices
+ */
+export function useDevices() {
+  const [devices, setDevices] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
+  const { user } = useUser()
+
+  useEffect(() => {
+    if (!user?.id) {
+      setLoading(false)
+      return
+    }
+
+    // TODO: Fetch devices from Supabase when configured
+    setDevices([])
+    setLoading(false)
+  }, [user?.id])
+
+  return { devices, loading, error }
+}

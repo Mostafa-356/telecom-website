@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
+import { OrganizationSchema, LocalBusinessSchema } from '@/components/schema'
 
 // Viewport configuration (Next.js 14+)
 export const viewport: Viewport = {
@@ -106,6 +107,10 @@ export default function RootLayout({
         {/* Additional SEO */}
         <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
         <link rel="sitemap" href="/sitemap.xml" />
+        
+        {/* JSON-LD Structured Data */}
+        <OrganizationSchema />
+        <LocalBusinessSchema />
       </head>
       <body className="antialiased">
         {children}

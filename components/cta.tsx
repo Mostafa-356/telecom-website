@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Phone } from "lucide-react"
+import { memo } from "react"
 
-export function CTA() {
+export const CTA = memo(function CTA() {
   return (
     <section className="py-20 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600">
       <div className="container mx-auto px-4 text-center">
@@ -31,4 +32,4 @@ export function CTA() {
       </div>
     </section>
   )
-}
+})
